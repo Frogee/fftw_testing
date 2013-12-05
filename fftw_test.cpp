@@ -90,7 +90,7 @@ int real2real() {
 	double *pd_outArray;   //The output is also as real numbers.
 
 	pd_inputArray = (double*)malloc(sizeof(double) * i_inputArraySize);   //Allocate memory for the input.
-	pd_outArray = (double*)fftw_malloc(sizeof(double) * i_outputArraySize);   //Allocate memory for the output.
+	pd_outArray = (double*)malloc(sizeof(double) * i_outputArraySize);   //Allocate memory for the output.
 	
 	std::cout << "\nThis takes in a real number array and returns a real number array:" << std::endl;
 	plan = fftw_plan_r2r_1d(i_inputArraySize, pd_inputArray, pd_outArray, FFTW_R2HC, FFTW_ESTIMATE);  //Set up the plan for the real 2 real DFT.
